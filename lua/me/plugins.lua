@@ -35,13 +35,19 @@ local plugins = {
 	"mhartington/formatter.nvim",
 
 	-- File and folder management
-	"ThePrimeagen/harpoon",
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+  },
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-fzy-native.nvim",
 	"nvim-telescope/telescope-live-grep-args.nvim",
 
 	-- Allows using telescope for things like code action (handy for searching)
-	"nvim-telescope/telescope-ui-select.nvim",
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    commit = "b0015e6e4b46a64192c64b68dec9a9ac5a4e5690",
+  },
 
   -- Enables you to go back in your local history
 	{
