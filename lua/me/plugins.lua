@@ -69,6 +69,7 @@ local plugins = {
 
 	-- Git
 	"tpope/vim-fugitive",
+  "ruifm/gitlinker.nvim",
 
 	-- UI
 	"f-person/auto-dark-mode.nvim",
