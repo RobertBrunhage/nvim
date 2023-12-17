@@ -11,6 +11,9 @@ local settings = {
 	dart = {
 		require("formatter.filetypes.dart").dartformat,
 	},
+	graphql = {
+		require("formatter.filetypes.graphql").prettier,
+	},
 	["*"] = {
 		-- "formatter.filetypes.any" defines default configurations for any
 		-- filetype
@@ -19,7 +22,7 @@ local settings = {
 }
 
 require("formatter").setup({
-	logging = false,
+	logging = true,
 	log_level = vim.log.levels.WARN,
 	filetype = settings,
 })

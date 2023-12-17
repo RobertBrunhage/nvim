@@ -6,6 +6,10 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>dl", vim.diagnostic.setqflist)
 
+vim.keymap.set({ "n", "i" }, "<C-b>", function()
+	vim.lsp.inlay_hint(0, nil)
+end)
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 	callback = function(ev)
@@ -19,9 +23,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-		vim.keymap.set({ "n", "i" }, "<C-b>", function()
-			vim.lsp.buf.inlay_hint(0, nil)
-		end, opts)
 	end,
 })
 
@@ -68,10 +69,17 @@ lsp_config.tsserver.setup({
 
 lsp_config.lua_ls.setup({
 	capabilities = capabilities,
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
 })
 
--- some tooltip for the lsp in bottom right
+-- Tooltip for the lsp in bottom right
 require("fidget").setup({})
 
--- hot reload :)
+-- Hot reload :)
 require("dart-tools")
