@@ -8,6 +8,9 @@ local settings = {
 	typescript = {
 		require("formatter.filetypes.typescript").prettier,
 	},
+	css = {
+		require("formatter.filetypes.css").prettier,
+	},
 	dart = {
 		require("formatter.filetypes.dart").dartformat,
 	},

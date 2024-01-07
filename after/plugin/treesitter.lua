@@ -18,8 +18,8 @@ require("nvim-treesitter.configs").setup({
 	},
 	indent = {
 		enable = true,
-    -- I have a couple of open issues for it though:
-    -- https://github.com/nvim-treesitter/nvim-treesitter/issues?q=RobertBrunhage+is%3Aopen
+		-- I have a couple of open issues for it though:
+		-- https://github.com/nvim-treesitter/nvim-treesitter/issues?q=RobertBrunhage+is%3Aopen
 		disable = { "dart" },
 	},
 })

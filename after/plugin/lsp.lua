@@ -1,4 +1,15 @@
 local lsp_config = require("lspconfig")
+require("mason").setup()
+require("mason-lspconfig").setup({
+	ensure_installed = {
+		-- dart sdk ships with LSP
+		"astro",
+		"tailwindcss",
+		"tsserver",
+		"lua_ls",
+	},
+})
+
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
@@ -61,6 +72,14 @@ lsp_config["dartls"].setup({
 			showTodos = true,
 		},
 	},
+})
+
+lsp_config.astro.setup({
+	capabilities = capabilities,
+})
+
+lsp_config.tailwindcss.setup({
+	capabilities = capabilities,
 })
 
 lsp_config.tsserver.setup({
