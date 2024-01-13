@@ -42,6 +42,14 @@ vim.diagnostic.config({
 	signs = false,
 })
 
+lsp_config["dcmls"].setup({
+	capabilities = capabilities,
+	cmd = {
+		"dcm",
+		"start-server",
+	},
+})
+
 lsp_config["dartls"].setup({
 	capabilities = capabilities,
 	cmd = {
