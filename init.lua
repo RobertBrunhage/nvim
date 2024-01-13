@@ -1,7 +1,6 @@
 require("me.remap")
 require("me.sets")
-require("me.plugins")
-require("me.color")
+require("me.lazy")
 
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
@@ -19,7 +18,6 @@ autocmd("TextYankPost", {
 	end,
 })
 
-
 -- This needs to be an auto command instead of simply putting this in your vimrc
 -- or init.lua as set or vim.o. If you have ftplugin enabled, vim has built-in
 -- files for common programming languages, for which the format options are
@@ -28,13 +26,13 @@ autocmd("TextYankPost", {
 -- [filetype].vim file. So you need to to do the change after the ft file is
 -- loaded
 autocmd("BufEnter", {
-    group = format_options_group,
-    pattern = "*",
-    desc = "Set buffer local formatoptions.",
-    callback = function()
-        vim.opt_local.formatoptions:remove({
-            "r", -- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
-            "o", -- Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
-        })
-    end,
+	group = format_options_group,
+	pattern = "*",
+	desc = "Set buffer local formatoptions.",
+	callback = function()
+		vim.opt_local.formatoptions:remove({
+			"r", -- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
+			"o", -- Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
+		})
+	end,
 })

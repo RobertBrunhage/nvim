@@ -34,3 +34,7 @@ vim.opt.colorcolumn = "80"
 
 vim.g.netrw_keepj = ""
 vim.g.netrw_fastbrowse = 2
+
+vim.opt.splitright = true
+
+vim.keymap.set("n", "<C-n>", vim.cmd.Ex)

@@ -1,4 +1,4 @@
-# Nvim setup with support for Flutter/Dart 
+# Nvim setup with support for Flutter/Dart (and DCM)
 Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
 
 ## This setup has my personal keybinds.
@@ -9,4 +9,4 @@ As it contains some personal setup, some keybinds might also be for scripts, all
 ### Important to be aware of
 
 1. The file that neovim loads first is `init.lua`, this loads `lua/me/*`
-2. `after/*` is loaded by neovim see `:h after-directory`
+2. For plugins we are using Lazy so you can either create an entry in `lua/plugins.lua` or add a file in `lua/plugins/{}`
