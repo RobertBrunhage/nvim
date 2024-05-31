@@ -123,9 +123,20 @@ return {
 				capabilities = capabilities,
 				settings = {
 					Lua = {
+            -- runtime = {
+            --   version = "LuaJIT",
+            -- },
 						diagnostics = {
 							globals = { "vim" },
 						},
+            -- workspace = {
+            --   checkThirdParty = false,
+            --   library = {
+            --     '${3rd}/luv/library',
+            --     unpack(vim.api.nvim_get_runtime_rile("", true)),
+            --     vim.api.nvim_get_proc,
+            --   }
+            -- },
 					},
 				},
 			})

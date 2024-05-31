@@ -11,6 +11,7 @@ return {
 
 		vim.keymap.set("n", "<leader>tlrb", builtin.git_branches, {})
 		vim.keymap.set("n", "<leader>tgg", require("telescope").extensions.live_grep_args.live_grep_args)
+		vim.keymap.set("n", "<leader>tgs", builtin.grep_string, {})
 		vim.keymap.set("n", "<leader>th", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>tc", builtin.commands, {})
 

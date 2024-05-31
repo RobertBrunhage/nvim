@@ -14,9 +14,9 @@ return {
 			css = {
 				require("formatter.filetypes.css").prettier,
 			},
-			-- dart = {
-			-- 	require("formatter.filetypes.dart").dartformat,
-			-- },
+			dart = {
+				require("formatter.filetypes.dart").dartformat,
+			},
 			graphql = {
 				require("formatter.filetypes.graphql").prettier,
 			},

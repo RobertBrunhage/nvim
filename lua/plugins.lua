@@ -3,7 +3,7 @@ return {
 	"folke/neodev.nvim",
 
 	-- Language support, mainly for indentation because it's more stable than treesitter in Dart
-	"dart-lang/dart-vim-plugin",
+	-- "dart-lang/dart-vim-plugin",
 
 	{
 		"nvim-treesitter/nvim-treesitter-context",
@@ -67,4 +67,11 @@ return {
 
 	-- Nice to have
 	"github/copilot.vim",
+
+	{
+		"Aityz/usage.nvim",
+		config = function()
+			require("usage").setup()
+		end,
+	},
 }
