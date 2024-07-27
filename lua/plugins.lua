@@ -8,7 +8,9 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		config = function()
-			require("treesitter-context").setup()
+			require("treesitter-context").setup({
+				enable = false,
+			})
 		end,
 	},
 
@@ -65,13 +67,29 @@ return {
 		},
 	},
 
-	-- Nice to have
-	"github/copilot.vim",
+	-- -- Nice to have
+	-- "github/copilot.vim",
 
 	{
 		"Aityz/usage.nvim",
 		config = function()
 			require("usage").setup()
+		end,
+	},
+
+	{
+		"frankroeder/parrot.nvim",
+		tag = "v0.3.7",
+		dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
+		-- optionally include "rcarriga/nvim-notify" for beautiful notifications
+		config = function()
+			require("parrot").setup({
+				providers = {
+					anthropic = {
+						api_key = os.getenv "ANTHROPIC_API_KEY",
+					},
+				},
+			})
 		end,
 	},
 }
