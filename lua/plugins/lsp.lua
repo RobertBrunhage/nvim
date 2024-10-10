@@ -22,7 +22,7 @@ return {
 					-- dart sdk ships with LSP
 					"astro",
 					"tailwindcss",
-					"tsserver",
+					"ts_ls",
 					"lua_ls",
 				},
 			})
@@ -115,7 +115,7 @@ return {
 				capabilities = capabilities,
 			})
 
-			lsp_config.tsserver.setup({
+			lsp_config.ts_ls.setup({
 				capabilities = capabilities,
 			})
 
