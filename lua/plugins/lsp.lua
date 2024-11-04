@@ -111,6 +111,16 @@ return {
 				capabilities = capabilities,
 			})
 
+
+			lsp_config.intelephense.setup({
+				capabilities = capabilities,
+			})
+
+
+			lsp_config.clangd.setup({
+				capabilities = capabilities,
+			})
+
 			lsp_config.tailwindcss.setup({
 				capabilities = capabilities,
 			})

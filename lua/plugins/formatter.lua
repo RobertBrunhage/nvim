@@ -1,3 +1,4 @@
+# https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes
 return {
 	"mhartington/formatter.nvim",
 	config = function()
@@ -8,6 +9,12 @@ return {
 			typescriptreact = {
 				require("formatter.filetypes.typescript").prettier,
 			},
+			vue = {
+				require("formatter.filetypes.typescript").prettier,
+			},
+      cpp = {
+				require("formatter.filetypes.cpp").clangformat,
+      },
 			typescript = {
 				require("formatter.filetypes.typescript").prettier,
 			},

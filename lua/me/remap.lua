@@ -23,3 +23,7 @@ vim.keymap.set("n", "<S-u>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>ft", ":silent !flutter-test %:p<CR>")
 vim.keymap.set("n", "<leader>ss", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+
+vim.keymap.set("n", "<leader>o", function()
+	vim.cmd("silent !open " .. vim.fn.expand("%:p"))
+end, { buffer = true, desc = "Open current netrw directory in system file explorer" })
