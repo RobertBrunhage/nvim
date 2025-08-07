@@ -66,19 +66,19 @@ return {
 				vim.fn.expand("$HOME/tools/flutter/"),
 			}
 
-			lsp_config["dcmls"].setup({
-				capabilities = capabilities,
-				cmd = {
-					"dcm",
-					"start-server",
-				},
-				filetypes = { "dart", "yaml" },
-				settings = {
-					dart = {
-						analysisExcludedFolders = dartExcludedFolders,
-					},
-				},
-			})
+			-- lsp_config["dcmls"].setup({
+			-- 	capabilities = capabilities,
+			-- 	cmd = {
+			-- 		"dcm",
+			-- 		"start-server",
+			-- 	},
+			-- 	filetypes = { "dart", "yaml" },
+			-- 	settings = {
+			-- 		dart = {
+			-- 			analysisExcludedFolders = dartExcludedFolders,
+			-- 		},
+			-- 	},
+			-- })
 
 			lsp_config["dartls"].setup({
 				capabilities = capabilities,
@@ -111,6 +111,9 @@ return {
 				capabilities = capabilities,
 			})
 
+			lsp_config.gopls.setup({
+				capabilities = capabilities,
+			})
 
 			lsp_config.intelephense.setup({
 				capabilities = capabilities,

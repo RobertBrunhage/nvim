@@ -67,8 +67,8 @@ return {
 		},
 	},
 
-	-- -- Nice to have
-	-- "github/copilot.vim",
+	-- Nice to have
+	"github/copilot.vim",
 
 	{
 		"yetone/avante.nvim",
@@ -116,4 +116,36 @@ return {
 			},
 		},
 	},
+	-- {
+	-- 	"olimorris/codecompanion.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		-- The following are optional:
+	-- 		{ "MeanderingProgrammer/render-markdown.nvim", ft = { "markdown", "codecompanion" } },
+	-- 	},
+	-- 	adapters = {
+	-- 		anthropic = function()
+	-- 			return require("codecompanion.adapters").extend("anthropic", {
+	-- 				env = {
+	-- 					api_key = os.getenv("ANTHROPIC_API_KEY"),
+	-- 				},
+	-- 				-- schema = {
+	-- 				-- 	model = {
+	-- 				-- 		default = "claude-3-opus-20240229",
+	-- 				-- 	},
+	-- 				-- },
+	-- 			})
+	-- 		end,
+	-- 	},
+	-- 	strategies = {
+	-- 		--NOTE: Change the adapter as required
+	-- 		chat = { adapter = "anthropic" },
+	-- 		-- inline = { adapter = "anthropic" },
+	-- 	},
+	-- 	opts = {
+	-- 		log_level = "DEBUG",
+	-- 	},
+	-- 	config = true,
+	-- },
 }

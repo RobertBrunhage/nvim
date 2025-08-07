@@ -3,6 +3,7 @@ require("me.sets")
 require("me.lazy")
 
 local autocmd = vim.api.nvim_create_autocmd
+
 local augroup = vim.api.nvim_create_augroup
 local yank_group = augroup("HighlightYank", {})
 local format_options_group = augroup("FormatOptions", { clear = true })
