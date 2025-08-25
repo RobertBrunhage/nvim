@@ -15,7 +15,6 @@ return {
 		"neovim/nvim-lspconfig",
 		lazy = false,
 		config = function()
-			local lsp_config = require("lspconfig")
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
@@ -66,21 +65,7 @@ return {
 				vim.fn.expand("$HOME/tools/flutter/"),
 			}
 
-			-- lsp_config["dcmls"].setup({
-			-- 	capabilities = capabilities,
-			-- 	cmd = {
-			-- 		"dcm",
-			-- 		"start-server",
-			-- 	},
-			-- 	filetypes = { "dart", "yaml" },
-			-- 	settings = {
-			-- 		dart = {
-			-- 			analysisExcludedFolders = dartExcludedFolders,
-			-- 		},
-			-- 	},
-			-- })
-
-			lsp_config["dartls"].setup({
+			vim.lsp.config("dartls", {
 				capabilities = capabilities,
 				cmd = {
 					"dart",
@@ -107,49 +92,54 @@ return {
 				},
 			})
 
-			lsp_config.astro.setup({
+			vim.lsp.config("astro", {
 				capabilities = capabilities,
 			})
 
-			lsp_config.gopls.setup({
+			vim.lsp.config("gopls", {
 				capabilities = capabilities,
 			})
 
-			lsp_config.intelephense.setup({
+			vim.lsp.config("intelephense", {
 				capabilities = capabilities,
 			})
 
-
-			lsp_config.clangd.setup({
+			vim.lsp.config("clangd", {
 				capabilities = capabilities,
 			})
 
-			lsp_config.tailwindcss.setup({
+			vim.lsp.config("tailwindcss", {
 				capabilities = capabilities,
 			})
 
-			lsp_config.ts_ls.setup({
+			vim.lsp.config("ts_ls", {
 				capabilities = capabilities,
 			})
 
-			lsp_config.lua_ls.setup({
+			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 				settings = {
 					Lua = {
-            -- runtime = {
-            --   version = "LuaJIT",
-            -- },
-						diagnostics = {
-							globals = { "vim" },
+						runtime = {
+							-- Tell the language server which version of Lua you're using
+							-- (most likely LuaJIT in the case of Neovim)
+							version = "LuaJIT",
 						},
-            -- workspace = {
-            --   checkThirdParty = false,
-            --   library = {
-            --     '${3rd}/luv/library',
-            --     unpack(vim.api.nvim_get_runtime_rile("", true)),
-            --     vim.api.nvim_get_proc,
-            --   }
-            -- },
+						diagnostics = {
+							-- Get the language server to recognize the `vim` global
+							globals = {
+								"vim",
+								"require",
+							},
+						},
+						workspace = {
+							-- Make the server aware of Neovim runtime files
+							library = vim.api.nvim_get_runtime_file("", true),
+						},
+						-- Do not send telemetry data containing a randomized but unique identifier
+						telemetry = {
+							enable = false,
+						},
 					},
 				},
 			})
