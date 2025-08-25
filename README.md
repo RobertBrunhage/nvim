@@ -1,4 +1,4 @@
-# Nvim setup with support for Flutter/Dart (and DCM)
+# Nvim setup with support for Flutter/Dart
 Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
 
 ## This setup has my personal keybinds.
