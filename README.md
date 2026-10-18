@@ -1,5 +1,7 @@
 # Nvim setup with support for Flutter/Dart
-Prerequisite: install [ripgrep](https://github.com/BurntSushi/ripgrep).
+Prerequisites: Neovim 0.12+, [ripgrep](https://github.com/BurntSushi/ripgrep), [tree-sitter-cli](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md) and a C compiler (for treesitter parsers): `brew install neovim ripgrep tree-sitter-cli`.
+
+AI completion uses Neovim's built-in inline completion with Copilot (installed through mason). Sign in once with `:LspCopilotSignIn`, toggle with `:AIToggle` / `<leader>cp`.
 
 ## This setup has my personal keybinds.
 **Feel free to switch, tweak or remove as you see fit!**

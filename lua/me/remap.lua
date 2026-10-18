@@ -24,6 +24,18 @@ vim.keymap.set("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>ft", ":silent !flutter-test %:p<CR>")
 vim.keymap.set("n", "<leader>ss", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
+-- Enter between a pair like {|} puts the cursor on its own indented line (code only, not prose)
+vim.keymap.set("i", "<CR>", function()
+  local is_code = (vim.bo.indentexpr ~= "" or vim.bo.cindent) and vim.bo.filetype ~= "markdown"
+  local col = vim.fn.col(".")
+  local pair = vim.fn.getline("."):sub(col - 1, col)
+  if is_code and (pair == "{}" or pair == "()" or pair == "[]") then
+    -- reindent the closing bracket line, then open an indented line above it
+    return "<CR><C-o>==<C-o>O"
+  end
+  return "<CR>"
+end, { expr = true, desc = "Split brackets on enter" })
+
 vim.keymap.set("n", "<leader>o", function()
   vim.cmd("silent !open " .. vim.fn.expand("%:p"))
 end, { desc = "Open current netrw directory in system file explorer" })
