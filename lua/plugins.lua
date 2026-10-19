@@ -49,28 +49,13 @@ return {
 		name = "rose-pine",
 
 		config = function()
+			-- Neovim sets 'background' from the terminal (Ghostty) and updates it when the
+			-- terminal switches between light and dark, rose-pine then reloads the matching variant
 			require("rose-pine").setup({
 				dark_variant = "moon",
 				light_variant = "dawn",
 			})
-
-			local auto_dark_mode = require("auto-dark-mode")
-
-			auto_dark_mode.setup({
-				update_interval = 1000,
-				set_dark_mode = function()
-					vim.o.background = "dark"
-					vim.cmd.colorscheme("rose-pine")
-				end,
-				set_light_mode = function()
-					vim.o.background = "light"
-					vim.cmd.colorscheme("rose-pine")
-				end,
-			})
+			vim.cmd.colorscheme("rose-pine")
 		end,
-
-		dependencies = {
-			"f-person/auto-dark-mode.nvim",
-		},
 	},
 }

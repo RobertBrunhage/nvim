@@ -1,5 +1,4 @@
 {
-  "auto-dark-mode.nvim": { "branch": "main", "commit": "2b16a24c202892e61fca7df4d2d7c4c872a44165" },
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "conform.nvim": { "branch": "master", "commit": "016802de402556da54c36bd7359b441266b01cdd" },
   "dart-tools.nvim": { "branch": "main", "commit": "5a0b9baeecd23861b3f5ff98ab014980349089a4" },
